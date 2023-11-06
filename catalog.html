@@ -13,13 +13,13 @@
       </a>
       <ul class="navigation-list">
         <li class="navigation-item">
-          <a class="navigation-link navigation-link-current">Главная</a>
+          <a class="navigation-link" href="index.html">Главная</a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="#">О Седоне</a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link" href="catalog.html">Гостиницы</a>
+          <a class="navigation-link navigation-link-current">Гостиницы</a>
         </li>
       </ul>
       <ul class="navigation-list navigation-user">
@@ -120,16 +120,20 @@
 
       <fieldset class="catalog-filter-group">
         <legend class="catalog-filter-title">Стоимость, ₽:</legend>
-          <label class="control">
-            <input class="control-input" type="text" value="0">
+          <p class="catalog-form-price">
+            <label class="control">
+              <input class="control-input" type="text" value="0">
 
-            от
-          </label>
-          <label class="control">
-            <input class="control-input" type="text" value="9000">
+              от
+            </label>
+          </p>
+          <p class="catalog-form-price">
+            <label class="control">
+              <input class="control-input" type="text" value="9000">
 
-            до
-          </label>
+              до
+            </label>
+          </p>
       </fieldset>
 
       <button class="btn filter-btn" type="submit">Применить</button>

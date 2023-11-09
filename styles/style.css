@@ -1,0 +1,88 @@
+/* Общие стили */
+
+.visually-hidden {
+  visibility: hidden;
+}
+
+.background {
+  width: 1200px;
+}
+
+/* Стили шапки сайта */
+
+.navigation-user-link-search {
+  background-image: url(../images/svg/magnifier.svg);
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+.navigation-user-link-favorite {
+  background-image: url(../images/svg/favorites.svg);
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+/* Стили главной страницы */
+.service-item-house {
+  background-image: url(../images/svg/service-house.svg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 72px;
+}
+
+.service-item-food {
+  background-image: url(../images/svg/service-food.svg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 72px;
+}
+
+.service-item-gift {
+  background-image: url(../images/svg/service-gift.svg);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 72px;
+}
+
+/* Стили подвала сайта */
+
+.social-item-vk {
+  background-image: url(../images/svg/logo-vk.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 14px;
+}
+
+.social-item-tg {
+  background-image: url(../images/svg/logo-tg.svg);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 15.1px;
+}
+
+.social-item-yt {
+  background-image: url(../images/svg/logo-yt.svg);
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 17px;
+}
+
+/* Стили хлебных крошек */
+
+.breadcrumbs li::after {
+  content: url(../images/svg/arrow-right-light.svg);
+  width: 6.39px;
+  height: 9.94px;
+}
+
+.breadcrumbs li:last-child::after {
+  content: none;
+}
+
+/* Стили сортировки */
+
+.view-link-tablet {
+  background-image: url(../images/svg/);
+}

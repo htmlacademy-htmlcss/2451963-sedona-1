@@ -71,10 +71,15 @@
 
 /* Стили хлебных крошек */
 
+.breadcrumbs-icon-home {
+  background-color: tomato;
+}
+
 .breadcrumbs li::after {
   content: url(../images/svg/arrow-right-light.svg);
   width: 6.39px;
   height: 9.94px;
+  background-color: tomato;
 }
 
 .breadcrumbs li:last-child::after {
@@ -84,5 +89,46 @@
 /* Стили сортировки */
 
 .view-link-tablet {
-  background-image: url(../images/svg/);
+  background-image: url(../images/svg/view-cards.svg);
+  width: 16px;
+  height: 14px;
+}
+
+.view-link-tablet {
+  background-image: url(../images/svg/view-cards.svg);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 14px;
+}
+
+.view-link-slideshow {
+  background-image: url(../images/svg/view-slide.svg);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 14px;
+}
+
+.view-link-list {
+  background-image: url(../images/svg/view-list.svg);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 14px;
+}
+
+/* Разметка результата каталога */
+
+.catalog-img {
+  width: 300px;
+  height: 212px;
+}
+
+.catalog-raiting-stars {
+  display: flex; /* флекс, потому что display: inline не даёт отобразить звёзды */
+}
+
+.catalog-raiting-stars-item {
+  background-image: url(../images/svg/star.svg);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 17px;
 }

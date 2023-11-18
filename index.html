@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Academy: Седона</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <div class="wrapper">
+
       <header class="page-header">
         <nav class="navigation">
           <a class="navigation-logo" href="#" aria-current="page">
@@ -57,9 +58,11 @@
           </div>
           <ul class="advantages-table">
             <li class="advantages-item advantages-item-full">
-              <div class="advantages-card card">
-                <h3 class="card-title">Настоящий городок</h3>
-                <p class="card-sibtitle">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+              <div class="advantages-card advantages-card-dark card">
+                <div class="card-wrapper advantages-wrapper">
+                  <h3 class="card-title">Настоящий городок</h3>
+                  <p class="card-subtitle">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+                </div>
               </div>
               <div class="advantages-image">
                 <img src="./images/jpg/advantages-city-image.jpg" width="800" height="385" alt="Фото города Сидона.">
@@ -67,29 +70,39 @@
             </li>
             <li class="advantages-item">
               <div class="advantages-card card">
-                <h3 class="card-title">Небольшая площадь</h3>
-                <p class="card-sibtitle">Все достопримечательности находятся очень близко</p>
+                <div class="card-wrapper advantages-wrapper">
+                  <h3 class="card-title">Небольшая площадь</h3>
+                  <p class="card-subtitle">Все достопримечательности находятся очень близко</p>
+                </div>
               </div>
             </li>
             <li class="advantages-item">
               <div class="advantages-card card">
-                <h3 class="card-title">Красивая дорога</h3>
-                <p class="card-sibtitle">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+                <div class="card-wrapper advantages-wrapper">
+                  <h3 class="card-title">Красивая дорога</h3>
+                  <p class="card-subtitle">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+                </div>
               </div>
             </li>
             <li class="advantages-item">
               <div class="advantages-card card">
-                <h3 class="card-title">Мало туристов</h3>
-                <p class="card-sibtitle">Большинство едет в Гранд Каньон и толпится там</p>
+                <div class="card-wrapper advantages-wrapper">
+                  <h3 class="card-title">Мало туристов</h3>
+                  <p class="card-subtitle">Большинство едет в Гранд Каньон и толпится там</p>
+                </div>
               </div>
             </li>
             <li class="advantages-item advantages-item-full advantages-item-reverse">
               <div class="advantages-image">
                 <img src="./images/jpg/advantages-canyon-image.jpg" width="800" height="385" alt="Фото Гранд-каньона.">
               </div>
-              <div class="advantages-card card">
-                <h3 class="card-title">Там есть мост дьявола</h3>
-                <p class="card-sibtitle">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
+              <div class="advantages-card advantages-card-dark card">
+                <div class="advantages-card card">
+                  <div class="card-wrapper advantages-wrapper">
+                    <h3 class="card-title">Там есть мост дьявола</h3>
+                    <p class="card-subtitle">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
@@ -97,21 +110,36 @@
         <!-- Блок обслуживания-->
         <section class="service">
           <div class="service-container">
-            <h2 class="service-title page-title">Приезжайте в Седону отдохнуть в комфорте и уюте!</h2>
+            <h2 class="service-title page-title">Приезжайте в Седону отдохнуть<br> в комфорте и уюте!</h2>
             <p class="service-subtitle page-subtitle">Опытный персонал и качественное обслуживание!</p>
           </div>
           <ul class="service-list">
-            <li class="service-item service-item-house card">
-              <h3 class="card-title">Жильё</h3>
-              <p class="card-subtitle">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+            <li class="service-item">
+              <div class="service-card card">
+                <div class="card-wrapper service-wrapper">
+                  <img class="service-image-house" width="75" height="72" alt="Значок дома." src="images/svg/service-house.svg">
+                  <h3 class="card-title">Жильё</h3>
+                  <p class="card-subtitle">Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+                </div>
+              </div>
             </li>
-            <li class="service-item service-item-food card">
-              <h3 class="card-title">Еда</h3>
-              <p class="card-subtitle">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
+            <li class="service-item">
+              <div class="service-card card-clear card">
+                <div class="card-wrapper service-wrapper">
+                  <img class="service-image-food" width="75" height="72" alt="Значок еды." src="images/svg/service-food.svg">
+                  <h3 class="card-title">Еда</h3>
+                  <p class="card-subtitle">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
+                </div>
+              </div>
             </li>
-            <li class="service-item service-item-gift card">
-              <h3 class="card-title">Сувениры</h3>
-              <p class="card-subtitle">Не только китайского, но и настоящего местного производства!</p>
+            <li class="service-item">
+              <div class="service-card card">
+                <div class="card-wrapper service-wrapper">
+                  <img class="service-image-gift" width="75" height="72" alt="Значок подарка." src="images/svg/service-gift.svg">
+                  <h3 class="card-title">Сувениры</h3>
+                  <p class="card-subtitle">Не только китайского, но и настоящего местного производства!</p>
+                </div>
+              </div>
             </li>
           </ul>
         </section>

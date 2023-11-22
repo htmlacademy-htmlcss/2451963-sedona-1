@@ -116,20 +116,84 @@ body {
 /* Page */
 
 .page-title {
-  color: #000;
-  font-size: 30px;
-  font-style: normal;
+  margin: 0;
+
   font-weight: 700;
+  font-size: 30px;
   line-height: 36px;
+  color: #000;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .page-subtitle {
-  color: #333;
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 26px;
+}
+
+
+/* Стили шапки сайта */
+.navigation-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navigation-link {
+  display: inline-block;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
+}
+
+.navigation-user {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navigation-user-link {
+  display: block;
+  width: 44px;
+  min-height: 64px;
+
+  text-decoration: none;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navigation-user-link-search {
+  background-image: url(../images/svg/magnifier.svg);
+}
+
+.navigation-user-link-favorite {
+  background-image: url(../images/svg/favorites.svg);
 }
 
 /* Card */
+/* Advantages */
+.advantages-item {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+.advantages-wrapper {
+  padding: 103px 85px;
+}
+
+.advantages-card {
+  background-color: #83B3D333;
+}
+
+.advantages-card-dark {
+  color: #fff;
+  background-color: #82B3D3;
+}
 
 .card {
   display: flex;
@@ -154,52 +218,6 @@ body {
 
 .card-wrapper {
   width: 230px;
-}
-
-/* Стили шапки сайта */
-
-.page-header {
-  color: #000;
-  background-color: #fff;
-}
-
-.navigation-link {
-  line-height: 24px;
-  color: #000;
-  font-weight: 700;
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.navigation-user-link-search {
-  background-image: url(../images/svg/magnifier.svg);
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-}
-
-.navigation-user-link-favorite {
-  background-image: url(../images/svg/favorites.svg);
-  background-repeat: no-repeat;
-  width: 20px;
-  height: 20px;
-}
-
-/* Стили главной страницы */
-
-/* advantages */
-
-.advantages-wrapper {
-  padding: 103px 85px;
-}
-
-.advantages-card {
-  background-color: #83B3D333;
-}
-
-.advantages-card-dark {
-  color: #fff;
-  background-color: #82B3D3;
 }
 
 /* service */

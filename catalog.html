@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Гостиницы Седоны</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="wrapper">
@@ -115,7 +115,7 @@
                 <label class="range-label" for="min-input">от</label>
               </div>
               <div class="range-item">
-                <input class="control-input  range-input-max field" id="max-input" type="text" value="9000">
+                <input class="range-input  range-input-max field" id="max-input" type="text" value="9000">
                 <label class="range-label" for="max-input">до</label>
               </div>
             </div>
@@ -134,7 +134,7 @@
 
       <section class="sorting">
         <h2 class="visually-hidden">Сортировка</h2>
-        <p class="outcome">Найдено гостиниц:<output class="outcome-found">38</output></p>
+        <p class="outcome page-title">Найдено гостиниц: <output class="outcome-found">38</output></p>
         <!-- Вопрос по смене стрелочки селектора-->
         <select class="sorting-select" aria-label="Сортировка">
           <option value="cheap" selected>Сначала дешевые</option>
@@ -228,8 +228,8 @@
         </ul>
 
         <ul class="pagination">
-          <li class="pagination-item">
-            <a class="pagination-link pagination-current" href="#" aria-current="page">1</a>
+          <li class="pagination-item pagination-item-current">
+            <a class="pagination-link" href="#" aria-current="page">1</a>
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">2</a>
@@ -240,8 +240,8 @@
           <li class="pagination-item">
             <a class="pagination-link " href="#">4</a>
           </li>
-          <li class="pagination-item">
-            <a class="pagination-link pagination-link-more" aria-label="Показать другие страницы">...</a>
+          <li class="pagination-item pagination-item-more">
+            <a class="pagination-link" aria-label="Показать другие страницы">...</a>
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">10</a>
@@ -250,7 +250,7 @@
 
       </section>
 
-      <article class="subscribe subscribe-home">
+      <article class="subscribe subscribe-catalog">
         <div class="subscribe-container">
           <h2 class="subscribe-title page-title">Подпишитесь на рассылку</h2>
           <p class="subscribe-subtitle page-subtitle">Только полезная информация и никакого спама, честное бойскаутское!</p>
@@ -270,14 +270,23 @@
       <ul class="page-footer-social social-list">
         <li class="social-item social-item-vk">
           <a class="social-link" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">
+              Ссылка на вконтакте
+            </span>
           </a>
         </li>
         <li class="social-item social-item-tg">
           <a class="social-link" href="https://t.me/htmlacademy">
+            <span class="visually-hidden">
+              Ссылка на телеграм
+            </span>
           </a>
         </li>
         <li class="social-item social-item-yt">
           <a class="social-link" href="https://www.youtube.com/user/htmlacademyru">
+            <span class="visually-hidden">
+              Ссылка на ютуб
+            </span>
           </a>
         </li>
       </ul>

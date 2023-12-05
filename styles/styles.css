@@ -175,7 +175,8 @@ body {
 
 .navigation-user {
   display: flex;
-  width: 270px;
+  width: 90px;
+  margin-right: 20px;
 }
 
 .navigation-link {
@@ -212,6 +213,12 @@ body {
 .navigation-user-link-favorite {
   background-image: url("../images/svg/favorites.svg");
 }
+/* Hero */
+
+.hero-img {
+  display: block;
+  margin: 0 auto;
+}
 
 /* Card */
 /* Advantages */
@@ -241,7 +248,14 @@ body {
   color: #fff;
 }
 
+.advantages-image  {
+  display: block;
+}
+
 .advantages-table {
+  display: flex;
+  flex-wrap: wrap;
+
   margin: 0;
   padding: 0;
 

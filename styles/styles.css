@@ -157,18 +157,18 @@ body {
 }
 
 .navigation-list {
+  align-items: start;
   display: flex;
-  width: 340px;
+  max-width: 500px;
   margin: 0;
   padding: 0;
 
-  margin-right: 285px;
+  margin-right: auto;
 
   list-style: none;
 }
 
 .navigation-item {
-  width: 100px;
   padding: 20px 16px; /* Вопрос правильно ли, или тут нужно было margin */
 }
 
@@ -211,6 +211,10 @@ body {
 
 .navigation-user-link-favorite {
   background-image: url("../images/svg/favorites.svg");
+}
+
+.navigation-button {
+  text-align: center; /* не понимаю, почему кнопка растянулась */
 }
 
 /* Hero */

@@ -103,6 +103,7 @@ body {
 
 .button-transparent {
   background-color: transparent;
+  padding: 8px 57px;
 }
 
 .field {
@@ -382,10 +383,6 @@ body {
   padding-bottom: 104px;
 }
 
-.subscribe-subtitle {
-  max-width: 475px;
-}
-
 .subscribe-home {
   color: #fff;
 
@@ -463,6 +460,7 @@ body {
 
 .filter {
   padding: 35px 70px 70px;
+  margin-bottom: 50px;
 
   color: #fff;
 
@@ -473,9 +471,14 @@ body {
 }
 
 .filter-title {
+  margin: 0;
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
+}
+
+.filter-header {
+  margin-bottom: 40px;
 }
 
 /* Стили хлебных крошек */
@@ -513,6 +516,8 @@ body {
 }
 
 .catalog-filter-title {
+  padding: 0;
+  margin-bottom: 32px;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -524,10 +529,21 @@ body {
 }
 
 .control-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 
   list-style: none;
+}
+
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.control-input {
+  margin-right: 16px;
 }
 
 .control-text {
@@ -555,30 +571,62 @@ body {
   margin-right: 70px;
 }
 
+.filter-submit {
+  margin-bottom: 32px; /* Вопрос, не ровно встают элементы из разных филдсетов, в фигме всё ровно */
+}
+
 .catalog-filter-group-buttons {
+  align-self: flex-end;
   width: 190px;
   margin-left: auto;
 }
 
+.range-item:first-child {
+  margin-right: 2px;
+}
+
+.range-item {
+  position: relative;
+}
+
 .range-label {
+  position: absolute;
+  top: 12px;
+  right: 20px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
+}
+
+.range-input-container {
+  display: flex;
 }
 
 .range-input {
   font-weight: 700;
 }
 
+.range-input-min {
+  border-radius: 4px 0 0 4px;
+}
+
+.range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
 /* Стили сортировки */
 
 .sorting {
   display: flex;
+  /* flex-wrap: wrap; Нужен ли тут wrap? */
 
   padding: 0 70px;
+  margin-bottom: 40px;
 }
 
 .outcome {
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  margin-right: 200px;
 }
 
 .sorting-select {
@@ -598,6 +646,7 @@ body {
 .sorting-view {
   display: flex;
   width: 160px;
+  margin-left: auto;
 }
 
 .view-link {
@@ -636,6 +685,7 @@ body {
 .catalog-list {
   margin: 0;
   padding: 0;
+  margin-bottom: 80px;
 
   list-style-type: none;
 }
@@ -682,10 +732,16 @@ body {
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  margin-bottom: 60px;
 
   list-style: none;
+}
+
+.pagination-item {
+  text-align: center;
 }
 
 .pagination-item:not(:last-child) {
@@ -693,9 +749,9 @@ body {
 }
 
 .pagination-link {
-  text-align: center;
-  display: inline-block;
-  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   color: #fff;
   font-size: 20px;

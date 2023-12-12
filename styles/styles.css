@@ -32,9 +32,6 @@ html {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -46,6 +43,9 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -83,7 +83,7 @@ body {
   display: inline-block;
   margin: 0;
   padding: 8px 50px;
-
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -108,7 +108,7 @@ body {
 .field {
   width: 100%;
   height: 48px;
-  padding: 10px 20px;
+  padding: 14px 20px;
 
   font-weight: 400;
   font-size: 18px;
@@ -129,6 +129,7 @@ body {
 
 .page-title {
   margin: 0;
+  margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 30px;
@@ -149,6 +150,8 @@ body {
 .navigation {
   display: flex;
   padding: 0 70px;
+
+  align-items: start;
 }
 
 .navigation-logo {
@@ -159,6 +162,7 @@ body {
 .navigation-list {
   align-items: start;
   display: flex;
+  flex-wrap: wrap;
   max-width: 500px;
   margin: 0;
   padding: 0;
@@ -174,7 +178,12 @@ body {
 
 .navigation-user {
   display: flex;
-  width: 90px;
+  flex-wrap: wrap;
+  max-width: 136px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
   margin-right: 20px;
 }
 
@@ -186,12 +195,6 @@ body {
   line-height: 24px;
   color: #000;
   text-decoration: none;
-}
-
-.navigation-user {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .navigation-user-link {
@@ -214,21 +217,39 @@ body {
 }
 
 .navigation-button {
-  text-align: center; /* не понимаю, почему кнопка растянулась */
+  margin-top: 14px;
+  width: 160px;
+  padding: 8px 20px;
 }
 
 /* Hero */
 
+.hero {
+  position: relative;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+}
+
 .hero-img {
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 51px;
 }
 
 /* Card */
 /* Advantages */
 
+.advantages {
+  margin-bottom: 64px;
+}
+
 .advantages-container {
   text-align: center;
+  margin-bottom: 90px;
+}
+
+.advantages-title {
+  margin-bottom: 25px;
 }
 
 .advantages-item {
@@ -240,7 +261,7 @@ body {
 }
 
 .advantages-item-full {
-  display: flex;
+  display: flex; /* Не понимаю, почему у меня отступ у картинок, вроде это флекс-элементы, а отступ всё равно есть */
   width: 100%;
 
   color: #fff;
@@ -248,12 +269,12 @@ body {
   background-color: #82B3D3;
 }
 
-.advantages-item-full .card-title {
-  color: #fff;
+.advantages-image img {
+  height: 100%; /* Правильно ли будет таким оставить решение проблемы с отступами? */
 }
 
-.advantages-image  {
-  display: block;
+.advantages-item-full .card-title {
+  color: #fff;
 }
 
 .advantages-table {
@@ -275,6 +296,8 @@ body {
 }
 
 .card-title {
+  margin: 0;
+  margin-bottom: 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -288,12 +311,18 @@ body {
 
 /* service */
 
+.service {
+  margin-bottom: 96px;
+}
+
 .service-container {
   text-align: center;
+  margin-bottom: 64px;
 }
 
 .service-list {
   display: flex;
+  flex-wrap: wrap;
 
   margin: 0;
   padding: 0;
@@ -307,8 +336,16 @@ body {
   background-position: top 80px center;
 }
 
+.service-card {
+  padding: 183px 85px 81px 85px;
+}
+
 .service-item:nth-child(2n) {
   background-color: #fff;
+}
+
+.service-item .card-title {
+  margin-bottom: 30px;
 }
 
 .service-item-house {
@@ -327,9 +364,11 @@ body {
 
 .search {
   text-align: center;
+  margin-bottom: 96px;
 }
 
 .search-button {
+  margin-top: 54px;
   font-size: 20px;
   line-height: 36px;
 }
@@ -338,7 +377,13 @@ body {
 
 .subscribe {
   text-align: center;
-  padding: 0 258px;
+  padding: 258px;
+  padding-top: 96px;
+  padding-bottom: 104px;
+}
+
+.subscribe-subtitle {
+  max-width: 475px;
 }
 
 .subscribe-home {
@@ -351,6 +396,7 @@ body {
 }
 
 .subscribe-form {
+  margin-top: 54px;
   display: flex;
 }
 
@@ -360,6 +406,7 @@ body {
 
 .subscribe-input {
   border-radius: 4px 0 0 4px;
+  min-height: 52px; /* Правильно ли будет прописать это, потому что не без этого инпут меньше баттона */
 }
 
 .subscribe-button {
@@ -371,23 +418,18 @@ body {
 
 /* Стили подвала сайта */
 
-.page-footer-container {
+.page-footer {
+  height: 120px;
+  padding: 40px 70px 30px;
   display: flex;
-
-  padding: 0 70px;
-}
-
-.page-footer-phone {
-  font-size: 40px;
-  line-height: 40px;
-  color: #000;
-  text-transform: uppercase;
-  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .social-list {
   display: flex;
-  width: 140px;
+  flex-wrap: wrap;
+  width: 145px;
 
   margin: 0;
   padding: 0;
@@ -398,31 +440,17 @@ body {
 
 .social-link {
   display: block;
-  width: 48px;
-  height: 41px;
-
-  color: #82b3d3;
+  width: 47px;
+  height: 40px;
+  padding: 12px;
 }
 
-.social-item-vk {
-  background-image: url("../images/svg/logo-vk.svg");
-  background-repeat: no-repeat;
-  width: 24px;
-  height: 14px;
-}
-
-.social-item-tg {
-  background-image: url("../images/svg/logo-tg.svg");
-  background-repeat: no-repeat;
-  width: 18px;
-  height: 15px;
-}
-
-.social-item-yt {
-  background-image: url("../images/svg/logo-yt.svg");
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 17px;
+.page-footer-phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .page-footer-copyright {
@@ -480,9 +508,8 @@ body {
 
 /* фильтры */
 
-.catalog-container {
-  max-width: 1060px;
-  margin: 0 auto;
+.catalog-wrapper {
+  padding: 0 70px;
 }
 
 .catalog-filter-title {
@@ -547,12 +574,11 @@ body {
 .sorting {
   display: flex;
 
-  width: 1060px;
-  margin: 0 auto;
+  padding: 0 70px;
 }
 
 .outcome {
-  margin-right: 200px;
+  margin-right: auto;
 }
 
 .sorting-select {
@@ -572,8 +598,6 @@ body {
 .sorting-view {
   display: flex;
   width: 160px;
-
-  margin-left: auto;
 }
 
 .view-link {
@@ -585,6 +609,10 @@ body {
   background-position: center;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+}
+
+.view-link:not(:last-child) {
+  margin-right: 8px;
 }
 
 .view-link-current {
@@ -606,12 +634,10 @@ body {
 /* Разметка результата каталога */
 
 .catalog-list {
-  display: flex;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
-  list-style: none;
+  list-style-type: none;
 }
 
 .catalog-card {

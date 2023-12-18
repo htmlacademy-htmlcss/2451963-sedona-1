@@ -32,9 +32,6 @@ html {
 
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -46,6 +43,9 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -83,7 +83,7 @@ body {
   display: inline-block;
   margin: 0;
   padding: 8px 50px;
-
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -103,12 +103,13 @@ body {
 
 .button-transparent {
   background-color: transparent;
+  padding: 8px 57px;
 }
 
 .field {
   width: 100%;
   height: 48px;
-  padding: 10px 20px;
+  padding: 14px 20px;
 
   font-weight: 400;
   font-size: 18px;
@@ -129,6 +130,7 @@ body {
 
 .page-title {
   margin: 0;
+  margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 30px;
@@ -149,6 +151,9 @@ body {
 .navigation {
   display: flex;
   padding: 0 70px;
+  /* как сделать так, чтобы логотип выходил за рамки шапки */
+  /* не понимаю как правильно на гридах сделать навигацию */
+  align-items: start;
 }
 
 .navigation-logo {
@@ -159,6 +164,7 @@ body {
 .navigation-list {
   align-items: start;
   display: flex;
+  flex-wrap: wrap;
   max-width: 500px;
   margin: 0;
   padding: 0;
@@ -174,7 +180,12 @@ body {
 
 .navigation-user {
   display: flex;
-  width: 90px;
+  flex-wrap: wrap;
+  max-width: 136px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
   margin-right: 20px;
 }
 
@@ -186,12 +197,6 @@ body {
   line-height: 24px;
   color: #000;
   text-decoration: none;
-}
-
-.navigation-user {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .navigation-user-link {
@@ -214,21 +219,39 @@ body {
 }
 
 .navigation-button {
-  text-align: center; /* не понимаю, почему кнопка растянулась */
+  margin-top: 14px;
+  width: 160px;
+  padding: 8px 20px;
 }
 
 /* Hero */
 
+.hero {
+  position: relative;
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+}
+
 .hero-img {
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 51px;
 }
 
 /* Card */
 /* Advantages */
 
+.advantages {
+  margin-bottom: 64px;
+}
+
 .advantages-container {
   text-align: center;
+  margin-bottom: 90px;
+}
+
+.advantages-title {
+  margin-bottom: 25px;
 }
 
 .advantages-item {
@@ -240,25 +263,26 @@ body {
 }
 
 .advantages-item-full {
-  display: flex;
+  display: flex; /* Не понимаю, почему у меня отступ у картинок, вроде это флекс-элементы, а отступ всё равно есть */
   width: 100%;
+  grid-column: 1 / -1;
 
   color: #fff;
 
   background-color: #82B3D3;
 }
 
+.advantages-image img {
+  height: 100%; /* Правильно ли будет таким оставить решение проблемы с отступами? */
+}
+
 .advantages-item-full .card-title {
   color: #fff;
 }
 
-.advantages-image  {
-  display: block;
-}
-
 .advantages-table {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   margin: 0;
   padding: 0;
@@ -275,6 +299,8 @@ body {
 }
 
 .card-title {
+  margin: 0;
+  margin-bottom: 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
@@ -288,12 +314,18 @@ body {
 
 /* service */
 
+.service {
+  margin-bottom: 96px;
+}
+
 .service-container {
   text-align: center;
+  margin-bottom: 64px;
 }
 
 .service-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   margin: 0;
   padding: 0;
@@ -307,8 +339,16 @@ body {
   background-position: top 80px center;
 }
 
+.service-card {
+  padding: 183px 85px 81px 85px;
+}
+
 .service-item:nth-child(2n) {
   background-color: #fff;
+}
+
+.service-item .card-title {
+  margin-bottom: 30px;
 }
 
 .service-item-house {
@@ -327,9 +367,11 @@ body {
 
 .search {
   text-align: center;
+  margin-bottom: 96px;
 }
 
 .search-button {
+  margin-top: 54px;
   font-size: 20px;
   line-height: 36px;
 }
@@ -338,7 +380,9 @@ body {
 
 .subscribe {
   text-align: center;
-  padding: 0 258px;
+  padding: 258px;
+  padding-top: 96px;
+  padding-bottom: 104px;
 }
 
 .subscribe-home {
@@ -351,7 +395,12 @@ body {
 }
 
 .subscribe-form {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+
+  margin-top: 54px;
+
 }
 
 .subscribe-home .subscribe-title {
@@ -360,6 +409,7 @@ body {
 
 .subscribe-input {
   border-radius: 4px 0 0 4px;
+  min-height: 52px; /* Правильно ли будет прописать это, потому что не без этого инпут меньше баттона */
 }
 
 .subscribe-button {
@@ -371,23 +421,18 @@ body {
 
 /* Стили подвала сайта */
 
-.page-footer-container {
+.page-footer {
+  height: 120px;
+  padding: 40px 70px 30px;
   display: flex;
-
-  padding: 0 70px;
-}
-
-.page-footer-phone {
-  font-size: 40px;
-  line-height: 40px;
-  color: #000;
-  text-transform: uppercase;
-  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .social-list {
   display: flex;
-  width: 140px;
+  flex-wrap: wrap;
+  width: 145px;
 
   margin: 0;
   padding: 0;
@@ -398,31 +443,17 @@ body {
 
 .social-link {
   display: block;
-  width: 48px;
-  height: 41px;
-
-  color: #82b3d3;
+  width: 47px;
+  height: 40px;
+  padding: 12px;
 }
 
-.social-item-vk {
-  background-image: url("../images/svg/logo-vk.svg");
-  background-repeat: no-repeat;
-  width: 24px;
-  height: 14px;
-}
-
-.social-item-tg {
-  background-image: url("../images/svg/logo-tg.svg");
-  background-repeat: no-repeat;
-  width: 18px;
-  height: 15px;
-}
-
-.social-item-yt {
-  background-image: url("../images/svg/logo-yt.svg");
-  background-repeat: no-repeat;
-  width: 22px;
-  height: 17px;
+.page-footer-phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .page-footer-copyright {
@@ -435,6 +466,7 @@ body {
 
 .filter {
   padding: 35px 70px 70px;
+  margin-bottom: 50px;
 
   color: #fff;
 
@@ -445,9 +477,14 @@ body {
 }
 
 .filter-title {
+  margin: 0;
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
+}
+
+.filter-header {
+  margin-bottom: 40px;
 }
 
 /* Стили хлебных крошек */
@@ -480,12 +517,13 @@ body {
 
 /* фильтры */
 
-.catalog-container {
-  max-width: 1060px;
-  margin: 0 auto;
+.catalog-wrapper {
+  padding: 0 70px;
 }
 
 .catalog-filter-title {
+  padding: 0;
+  margin-bottom: 32px;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -497,10 +535,21 @@ body {
 }
 
 .control-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0;
 
   list-style: none;
+}
+
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.control-input {
+  margin-right: 16px;
 }
 
 .control-text {
@@ -528,30 +577,61 @@ body {
   margin-right: 70px;
 }
 
+.filter-submit {
+  margin-bottom: 32px; /* Вопрос, не ровно встают элементы из разных филдсетов, в фигме всё ровно */
+}
+
 .catalog-filter-group-buttons {
+  align-self: flex-end;
   width: 190px;
   margin-left: auto;
 }
 
+.range-item:first-child {
+  margin-right: 2px;
+}
+
+.range-item {
+  position: relative;
+}
+
 .range-label {
+  position: absolute;
+  top: 12px;
+  right: 20px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
+}
+
+.range-input-container {
+  display: flex;
 }
 
 .range-input {
   font-weight: 700;
 }
 
+.range-input-min {
+  border-radius: 4px 0 0 4px;
+}
+
+.range-input-max {
+  border-radius: 0 4px 4px 0;
+}
+
 /* Стили сортировки */
 
 .sorting {
   display: flex;
+  /* flex-wrap: wrap; Нужен ли тут wrap? */
 
-  width: 1060px;
-  margin: 0 auto;
+  padding: 0 70px;
+  margin-bottom: 40px;
 }
 
 .outcome {
+  margin: 0;
+  padding: 0;
   margin-right: 200px;
 }
 
@@ -572,7 +652,6 @@ body {
 .sorting-view {
   display: flex;
   width: 160px;
-
   margin-left: auto;
 }
 
@@ -585,6 +664,10 @@ body {
   background-position: center;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+}
+
+.view-link:not(:last-child) {
+  margin-right: 8px;
 }
 
 .view-link-current {
@@ -606,29 +689,62 @@ body {
 /* Разметка результата каталога */
 
 .catalog-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
   margin: 0;
   padding: 0;
+  margin-bottom: 80px;
 
-  list-style: none;
+  list-style-type: none;
 }
 
 .catalog-card {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  align-items: flex-start;
+  column-gap: 20px;
+  row-gap: 16px;
+
   max-width: 340px;
   padding: 20px;
   border-radius: 4px;
   border: 1px solid #E6E6E6;
 }
 
-.catalog-card:not(:nth-child(3n)) {
-  margin-right: 20px;
+.catalog-card-link {
+  grid-column: 1 / -1;
 }
 
 .catalog-img {
   display: block;
   width: 300px;
   height: 212px;
+
+  margin-bottom: 16px;
+}
+
+.catalog-card-title {
+  margin: 0;
+}
+
+.catalog-text {
+  margin: 0;
+}
+
+.catalog-card-price {
+  justify-self: end;
+}
+
+.catalog-list button,
+.catalog-list .catalog-button-more,
+.catalog-list .catalog-raiting-text {
+  padding: 8px 18px; /* будет ли правильным такое решение, иначе кнопки не соответствуют макету, или же лучше поменять в основных стилях классу .button */
+}
+
+.catalog-raiting-stars {
+  align-self: center;
 }
 
 .catalog-raiting-stars-item {
@@ -644,11 +760,14 @@ body {
 }
 
 .catalog-raiting-text {
+  margin: 0;
   font-size: 16px;
   line-height: 20px;
+  font-weight: 400;
   text-transform: uppercase;
 
   border-radius: 4px;
+  color: #000;
   background-color:#F2F2F2;
 }
 
@@ -656,10 +775,16 @@ body {
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  margin-bottom: 60px;
 
   list-style: none;
+}
+
+.pagination-item {
+  text-align: center;
 }
 
 .pagination-item:not(:last-child) {
@@ -667,9 +792,9 @@ body {
 }
 
 .pagination-link {
-  text-align: center;
-  display: inline-block;
-  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   color: #fff;
   font-size: 20px;

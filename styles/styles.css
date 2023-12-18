@@ -151,7 +151,8 @@ body {
 .navigation {
   display: flex;
   padding: 0 70px;
-
+  /* как сделать так, чтобы логотип выходил за рамки шапки */
+  /* не понимаю как правильно на гридах сделать навигацию */
   align-items: start;
 }
 
@@ -394,8 +395,12 @@ body {
 }
 
 .subscribe-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+
   margin-top: 54px;
-  display: flex;
+
 }
 
 .subscribe-home .subscribe-title {
@@ -698,6 +703,7 @@ body {
 .catalog-card {
   display: grid;
   grid-template-columns: repeat(2, 140px);
+  align-items: flex-start;
   column-gap: 20px;
   row-gap: 16px;
 
@@ -715,6 +721,8 @@ body {
   display: block;
   width: 300px;
   height: 212px;
+
+  margin-bottom: 16px;
 }
 
 .catalog-card-title {
@@ -725,6 +733,10 @@ body {
   margin: 0;
 }
 
+.catalog-card-price {
+  justify-self: end;
+}
+
 .catalog-list button,
 .catalog-list .catalog-button-more,
 .catalog-list .catalog-raiting-text {
@@ -732,8 +744,7 @@ body {
 }
 
 .catalog-raiting-stars {
-  align-items: center;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .catalog-raiting-stars-item {

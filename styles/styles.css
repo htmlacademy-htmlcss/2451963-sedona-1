@@ -273,7 +273,9 @@ body {
 }
 
 .advantages-image img {
-  height: 100%; /* Правильно ли будет таким оставить решение проблемы с отступами? */
+  height: 100%;
+  /* width: 100%;
+  flex-shrink: 0; Правильно ли будет таким оставить решение проблемы с отступами? */
 }
 
 .advantages-item-full .card-title {
@@ -409,12 +411,14 @@ body {
 
 .subscribe-input {
   border-radius: 4px 0 0 4px;
-  min-height: 52px; /* Правильно ли будет прописать это, потому что не без этого инпут меньше баттона */
+  /* min-height: 52px; */
+  height: 100%; /* Правильно ли будет прописать это, потому что не без этого инпут меньше баттона */
 }
 
 .subscribe-button {
   font-size: 20px;
   line-height: 36px;
+  width: 232px;
 
   border-radius: 0 4px 4px 0;
 }

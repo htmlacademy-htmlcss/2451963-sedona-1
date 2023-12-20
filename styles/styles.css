@@ -274,11 +274,16 @@ body {
 }
 
 .advantages-image img {
+  display: block;
   height: 100%;
 }
 
 .advantages-item-full .card-title {
   color: #fff;
+}
+
+.advantages-item-full .advantages-card {
+  padding-top: 102px;
 }
 
 .advantages-table {
@@ -294,7 +299,7 @@ body {
 .card {
   width: 400px;
   min-height: 385px;
-  padding: 108px 85px 100px;
+  padding: 113px 85px 100px;
 
   text-align: center;
 }
@@ -347,6 +352,7 @@ body {
 
 .service-card {
   padding: 183px 85px 81px 85px;
+  text-align: center;
 }
 
 .service-item:nth-child(2n) {
@@ -430,16 +436,15 @@ body {
 /* Стили подвала сайта */
 
 .page-footer {
-  padding: 40px 70px 30px;
-  display: grid;
-  grid-template-columns: minmax(auto, 290px) 1fr minmax(auto, 262px);
+  padding: 40px 70px 34px;
+  display: flex;
   justify-content: space-between;
 }
 
 .social-list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 300px;
+  max-width: 144px;
 
   margin: 0;
   padding: 0;
@@ -454,9 +459,22 @@ body {
   padding: 12px;
 }
 
+.social-item-vk {
+  margin-top: 2px;
+}
+
+.social-item-tg {
+  margin: 3px 0 0 2px;
+}
+
+.social-item-yt {
+  margin-top: 4px;
+}
+
 .page-footer-phone {
+  margin-top: 5px;
+
   display: block;
-  margin: 0 auto;
   font-size: 40px;
   line-height: 40px;
   color: #000;
@@ -464,8 +482,9 @@ body {
   text-decoration: none;
 }
 
+
 .page-footer-copyright {
-  justify-self: end;
+  margin-top: 8px;
 }
 
 /* CSS Каталога */

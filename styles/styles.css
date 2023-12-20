@@ -265,7 +265,7 @@ body {
 .advantages-item-full {
   display: grid;
   grid-template-columns: 1fr auto;
-  width: 100%;
+  width: 100%; /* вопрос, почему у меня фулл айтемы 395, а не 385 как надо, в чём проблема */
   grid-column: 1 / -1;
 
   color: #fff;
@@ -294,7 +294,7 @@ body {
 .card {
   width: 400px;
   min-height: 385px;
-  padding: 115px 85px 100px;
+  padding: 108px 85px 100px;
 
   text-align: center;
 }
@@ -431,7 +431,8 @@ body {
 
 .page-footer {
   padding: 40px 70px 30px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(auto, 290px) 1fr minmax(auto, 262px);
   justify-content: space-between;
 }
 
@@ -463,6 +464,10 @@ body {
   text-decoration: none;
 }
 
+.page-footer-copyright {
+  justify-self: end;
+}
+
 /* CSS Каталога */
 
 /* filter */
@@ -480,7 +485,7 @@ body {
 }
 
 .filter-title {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
@@ -548,15 +553,39 @@ body {
 }
 
 .catalog-filter-item:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+
+.control-input[type="checkbox"]:checked {
+  background-color: blue;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.control-input[type="radio"]:checked::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .control-input {
-  margin-right: 16px;
+  position: relative;
+  margin: 0;
+  border: none;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: #333;
 }
 
 .control-text {
   line-height: 23px;
+  padding-left: 12px;
 }
 
 .catalog-filter-group {
@@ -590,28 +619,29 @@ body {
   margin-left: auto;
 }
 
-.range-item:first-child {
-  margin-right: 2px;
-}
-
 .range-item {
   position: relative;
 }
 
 .range-label {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 12px 20px 12px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
 }
 
 .range-input-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
 }
 
 .range-input {
   font-weight: 700;
+  padding-right: 50px;
 }
 
 .range-input-min {
@@ -634,6 +664,7 @@ body {
 
 .outcome {
   margin: 0;
+  margin-top: 7px;
   padding: 0;
   margin-right: 200px;
 }
@@ -694,7 +725,7 @@ body {
 .catalog-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
 
   margin: 0;
   padding: 0;
@@ -706,11 +737,11 @@ body {
 .catalog-card {
   display: grid;
   grid-template-columns: repeat(2, 140px);
-  align-items: flex-start;
+  align-items: start;
+  align-content: start;
   column-gap: 20px;
   row-gap: 16px;
 
-  max-width: 340px;
   padding: 20px;
   border-radius: 4px;
   border: 1px solid #E6E6E6;
@@ -729,6 +760,8 @@ body {
 }
 
 .catalog-card-title {
+  line-height: 28px;
+  font-size: 24px;
   margin: 0;
 }
 
@@ -743,7 +776,7 @@ body {
 .catalog-list button,
 .catalog-list .catalog-button-more,
 .catalog-list .catalog-raiting-text {
-  padding: 8px 18px; /* будет ли правильным такое решение, иначе кнопки не соответствуют макету, или же лучше поменять в основных стилях классу .button */
+  padding: 8px 10px;
 }
 
 .catalog-raiting-stars {

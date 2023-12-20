@@ -315,8 +315,20 @@ body {
 
 .advantages-card .card-title {
   position: relative;
-  margin: 0 0 30px;
-  padding-bottom: 30px;
+  margin: 0;
+}
+
+.advantages-card .card-title::after {
+  display: block;
+  margin: 30px auto 30px;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.advantages-item-full .card-title::after {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .card-subtitle {
@@ -690,12 +702,12 @@ body {
 
 .sorting-select {
   width: 292px;
-  height: 49px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   font-family: "PT Sans", sans-serif;
+  appearance: none;
 
   background-color: transparent;
   border: 2px solid #e5e5e5;

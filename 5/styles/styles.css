@@ -97,8 +97,35 @@ body {
   border-radius: 4px;
 }
 
+.button:hover {
+  background-color: #615048;
+}
+
+.button:focus {
+  background-color: #615048;
+  outline: none;
+}
+
+.button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #756157;
+}
+
 .button-light {
   background-color: #82B3D3;
+}
+
+.button-light:hover {
+  background-color: #68A2CA;
+}
+
+.button-light:focus {
+  background-color: #68A2CA;
+}
+
+.button-light:active {
+  background-color: #82B3D3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-transparent {
@@ -111,7 +138,7 @@ body {
   height: 48px;
   padding: 14px 20px;
 
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
   line-height: 24px;
   font-family: "PT Sans", sans-serif;
@@ -149,23 +176,26 @@ body {
 /* Header */
 
 .navigation {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(auto, 1fr) minmax(auto, 150px) auto;
+  justify-items: end;
+  gap: 20px;
   padding: 0 70px;
-  /* как сделать так, чтобы логотип выходил за рамки шапки */
-  /* не понимаю как правильно на гридах сделать навигацию */
+  margin-bottom: -10px;
+  position: relative;
   align-items: start;
 }
 
 .navigation-logo {
-  width: 140px;
-  margin-right: 30px;
+  margin-right: 10px;
+
+  z-index: 10;
 }
 
 .navigation-list {
   align-items: start;
   display: flex;
   flex-wrap: wrap;
-  max-width: 500px;
   margin: 0;
   padding: 0;
 
@@ -174,24 +204,18 @@ body {
   list-style: none;
 }
 
-.navigation-item {
-  padding: 20px 16px; /* Вопрос правильно ли, или тут нужно было margin */
-}
-
 .navigation-user {
   display: flex;
   flex-wrap: wrap;
-  max-width: 136px;
   margin: 0;
   padding: 0;
   list-style: none;
-
-  margin-right: 20px;
 }
 
 .navigation-link {
   display: inline-block;
 
+  padding: 20px 16px;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -199,23 +223,37 @@ body {
   text-decoration: none;
 }
 
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current::before {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  margin-bottom: -1px;
+  left: 16px;
+  height: 2px;
+  background-color: #756257;
+  content: ""; /* Как сделать, чтобы снизу 1 пиксель выходил из-за картинки */
+}
+
 .navigation-user-link {
+  position: relative;
   display: block;
   width: 44px;
   min-height: 64px;
-
-  text-decoration: none;
-
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.navigation-user-link-search {
-  background-image: url("../images/svg/magnifier.svg");
-}
-
-.navigation-user-link-favorite {
-  background-image: url("../images/svg/favorites.svg");
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000;
+  /* Как сделать круг поверх navigation-icon-favorite */
 }
 
 .navigation-button {
@@ -236,6 +274,12 @@ body {
 .hero-img {
   position: absolute;
   top: 51px;
+}
+
+.stairs-hero {
+  position: absolute;
+  bottom: 0;
+  width: 1200px;
 }
 
 /* Card */
@@ -263,8 +307,9 @@ body {
 }
 
 .advantages-item-full {
-  display: flex; /* Не понимаю, почему у меня отступ у картинок, вроде это флекс-элементы, а отступ всё равно есть */
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%; /* вопрос, почему у меня фулл айтемы 395, а не 385 как надо, в чём проблема */
   grid-column: 1 / -1;
 
   color: #fff;
@@ -273,11 +318,16 @@ body {
 }
 
 .advantages-image img {
-  height: 100%; /* Правильно ли будет таким оставить решение проблемы с отступами? */
+  display: block;
+  height: 100%;
 }
 
 .advantages-item-full .card-title {
   color: #fff;
+}
+
+.advantages-item-full .advantages-card {
+  padding-top: 102px;
 }
 
 .advantages-table {
@@ -293,19 +343,36 @@ body {
 .card {
   width: 400px;
   min-height: 385px;
-  padding: 115px 85px 100px;
+  padding: 113px 85px 100px;
 
   text-align: center;
 }
 
 .card-title {
-  margin: 0;
-  margin-bottom: 62px;
+  margin: 0 0 62px;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: #000;
   text-transform: uppercase;
+}
+
+.advantages-card .card-title {
+  position: relative;
+  margin: 0;
+}
+
+.advantages-card .card-title::after {
+  display: block;
+  margin: 30px auto 30px;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.advantages-item-full .card-title::after {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .card-subtitle {
@@ -341,6 +408,7 @@ body {
 
 .service-card {
   padding: 183px 85px 81px 85px;
+  text-align: center;
 }
 
 .service-item:nth-child(2n) {
@@ -409,12 +477,14 @@ body {
 
 .subscribe-input {
   border-radius: 4px 0 0 4px;
-  min-height: 52px; /* Правильно ли будет прописать это, потому что не без этого инпут меньше баттона */
+  height: 100%;
+  font-weight: 400;
 }
 
 .subscribe-button {
   font-size: 20px;
   line-height: 36px;
+  width: 232px;
 
   border-radius: 0 4px 4px 0;
 }
@@ -422,21 +492,18 @@ body {
 /* Стили подвала сайта */
 
 .page-footer {
-  height: 120px;
-  padding: 40px 70px 30px;
+  padding: 40px 70px 34px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .social-list {
   display: flex;
   flex-wrap: wrap;
-  width: 145px;
+  max-width: 144px;
 
   margin: 0;
   padding: 0;
-  margin-right: 236px;
 
   list-style: none;
 }
@@ -448,7 +515,38 @@ body {
   padding: 12px;
 }
 
+.social-icon {
+  fill: #83B3D3;
+}
+
+.social-icon:hover {
+  fill: #68A2CA;
+}
+
+.social-icon:focus {
+  fill: #68A2CA;
+}
+
+.social-icon:active {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
+.social-item-vk {
+  margin-top: 2px;
+}
+
+.social-item-tg {
+  margin: 3px 0 0 2px;
+}
+
+.social-item-yt {
+  margin-top: 4px;
+}
+
 .page-footer-phone {
+  margin-top: 5px;
+
+  display: block;
   font-size: 40px;
   line-height: 40px;
   color: #000;
@@ -456,8 +554,24 @@ body {
   text-decoration: none;
 }
 
+.copyright-icon {
+  fill: #000;
+}
+
+.copyright-icon:hover {
+  fill: #756157;
+}
+
+.copyright-icon:focus {
+  fill: #756157;
+}
+
+.copyright-icon:active {
+  fill: rgba(117, 97, 87, 0.3)
+}
+
 .page-footer-copyright {
-  margin-left: auto;
+  margin-top: 8px;
 }
 
 /* CSS Каталога */
@@ -477,7 +591,7 @@ body {
 }
 
 .filter-title {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 60px;
   font-weight: 700;
   line-height: 78px;
@@ -545,15 +659,39 @@ body {
 }
 
 .catalog-filter-item:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+
+.control-input[type="checkbox"]:checked {
+  background-color: blue;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.control-input[type="radio"]:checked::after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .control-input {
-  margin-right: 16px;
+  position: relative;
+  margin: 0;
+  border: none;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  background-color: #333;
 }
 
 .control-text {
   line-height: 23px;
+  padding-left: 12px;
 }
 
 .catalog-filter-group {
@@ -587,28 +725,29 @@ body {
   margin-left: auto;
 }
 
-.range-item:first-child {
-  margin-right: 2px;
-}
-
 .range-item {
   position: relative;
 }
 
 .range-label {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 12px 20px 12px;
   line-height: 24px;
   color: rgba(0, 0, 0, 0.3);
 }
 
 .range-input-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
 }
 
 .range-input {
   font-weight: 700;
+  padding-right: 50px;
 }
 
 .range-input-min {
@@ -631,22 +770,36 @@ body {
 
 .outcome {
   margin: 0;
+  margin-top: 7px;
   padding: 0;
   margin-right: 200px;
 }
 
 .sorting-select {
+  position: relative;
   width: 292px;
-  height: 49px;
+  padding-left: 20px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   font-family: "PT Sans", sans-serif;
+  appearance: none;
 
   background-color: transparent;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+}
+
+.sorting-select::after {
+  background-image: url("../images/svg/arrow.svg");
+  width: 12px;
+  height: 7px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 12px 20px 12px;
 }
 
 .sorting-view {
@@ -691,7 +844,7 @@ body {
 .catalog-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
 
   margin: 0;
   padding: 0;
@@ -703,11 +856,11 @@ body {
 .catalog-card {
   display: grid;
   grid-template-columns: repeat(2, 140px);
-  align-items: flex-start;
+  align-items: start;
+  align-content: start;
   column-gap: 20px;
   row-gap: 16px;
 
-  max-width: 340px;
   padding: 20px;
   border-radius: 4px;
   border: 1px solid #E6E6E6;
@@ -726,6 +879,8 @@ body {
 }
 
 .catalog-card-title {
+  line-height: 28px;
+  font-size: 24px;
   margin: 0;
 }
 
@@ -740,7 +895,7 @@ body {
 .catalog-list button,
 .catalog-list .catalog-button-more,
 .catalog-list .catalog-raiting-text {
-  padding: 8px 18px; /* будет ли правильным такое решение, иначе кнопки не соответствуют макету, или же лучше поменять в основных стилях классу .button */
+  padding: 8px 10px;
 }
 
 .catalog-raiting-stars {

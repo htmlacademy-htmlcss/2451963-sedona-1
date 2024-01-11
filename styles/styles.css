@@ -97,8 +97,35 @@ body {
   border-radius: 4px;
 }
 
+.button:hover {
+  background-color: #615048;
+}
+
+.button:focus {
+  background-color: #615048;
+  outline: none;
+}
+
+.button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #756157;
+}
+
 .button-light {
   background-color: #82B3D3;
+}
+
+.button-light:hover {
+  background-color: #68A2CA;
+}
+
+.button-light:focus {
+  background-color: #68A2CA;
+}
+
+.button-light:active {
+  background-color: #82B3D3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-transparent {
@@ -177,10 +204,6 @@ body {
   list-style: none;
 }
 
-.navigation-item {
-  padding: 20px 16px; /* Вопрос правильно ли, или тут нужно было margin */
-}
-
 .navigation-user {
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +215,7 @@ body {
 .navigation-link {
   display: inline-block;
 
+  padding: 20px 16px;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -199,23 +223,37 @@ body {
   text-decoration: none;
 }
 
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current::before {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  margin-bottom: -1px;
+  left: 16px;
+  height: 2px;
+  background-color: #756257;
+  content: ""; /* Как сделать, чтобы снизу 1 пиксель выходил из-за картинки */
+}
+
 .navigation-user-link {
+  position: relative;
   display: block;
   width: 44px;
   min-height: 64px;
-
-  text-decoration: none;
-
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.navigation-user-link-search {
-  background-image: url("../images/svg/magnifier.svg");
-}
-
-.navigation-user-link-favorite {
-  background-image: url("../images/svg/favorites.svg");
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000;
+  /* Как сделать круг поверх navigation-icon-favorite */
 }
 
 .navigation-button {
@@ -236,6 +274,12 @@ body {
 .hero-img {
   position: absolute;
   top: 51px;
+}
+
+.stairs-hero {
+  position: absolute;
+  bottom: 0;
+  width: 1200px;
 }
 
 /* Card */
@@ -471,6 +515,22 @@ body {
   padding: 12px;
 }
 
+.social-icon {
+  fill: #83B3D3;
+}
+
+.social-icon:hover {
+  fill: #68A2CA;
+}
+
+.social-icon:focus {
+  fill: #68A2CA;
+}
+
+.social-icon:active {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
 .social-item-vk {
   margin-top: 2px;
 }
@@ -701,7 +761,9 @@ body {
 }
 
 .sorting-select {
+  position: relative;
   width: 292px;
+  padding-left: 20px;
 
   font-weight: 400;
   font-size: 18px;
@@ -712,6 +774,17 @@ body {
   background-color: transparent;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
+}
+
+.sorting-select::after {
+  background-image: url("../images/svg/arrow.svg");
+  width: 12px;
+  height: 7px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 12px 20px 12px;
 }
 
 .sorting-view {

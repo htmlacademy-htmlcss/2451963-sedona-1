@@ -554,6 +554,21 @@ body {
   text-decoration: none;
 }
 
+.copyright-icon {
+  fill: #000;
+}
+
+.copyright-icon:hover {
+  fill: #756157;
+}
+
+.copyright-icon:focus {
+  fill: #756157;
+}
+
+.copyright-icon:active {
+  fill: rgba(117, 97, 87, 0.3)
+}
 
 .page-footer-copyright {
   margin-top: 8px;

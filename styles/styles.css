@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Подключение шрифтов локально */
 
 @font-face {
@@ -27,7 +34,8 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -44,13 +52,22 @@ body {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
 
   background-color: #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .visually-hidden {
@@ -67,7 +84,8 @@ body {
   border: 0;
 
   clip: rect(0 0 0 0);
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
 }
 
 .background {
@@ -76,7 +94,9 @@ body {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  -o-object-fit: cover;
+
+     object-fit: cover;
 }
 
 .button {
@@ -188,10 +208,24 @@ body {
   outline: 3px solid #68A2CA;
 }
 
+.field:focus:not(:-moz-placeholder-shown) {
+  outline: 3px solid #000000;
+}
+
+.field:focus:not(:-ms-input-placeholder) {
+  outline: 3px solid #000000;
+}
+
+.field:focus:not(:placeholder-shown) {
+  outline: 3px solid #000000;
+}
+
 /* Page */
 
 .main-container {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .page-title {
@@ -215,13 +249,17 @@ body {
 /* Header */
 
 .navigation {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: auto 20px minmax(auto, 1fr) 20px minmax(auto, 150px) 20px auto;
   grid-template-columns: auto minmax(auto, 1fr) minmax(auto, 150px) auto;
   justify-items: end;
   gap: 20px;
   padding: 0 70px;
   position: relative;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   z-index: 1;
 }
 
@@ -233,9 +271,17 @@ body {
 }
 
 .navigation-list {
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   display: flex;
-  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
@@ -246,7 +292,13 @@ body {
 
 .navigation-user {
   display: flex;
-  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -285,6 +337,34 @@ body {
   min-height: 64px;
 }
 
+.navigation-user-quantity {
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  z-index: 10;
+  right: 3px;
+  top: 11px;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: #7DB54F;
+  color: #fff;
+  border-radius: 10px;
+
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+}
+
 .navigation-icon {
   position: absolute;
   top: 0;
@@ -308,7 +388,14 @@ body {
   position: relative;
   margin-bottom: 70px;
   display: flex;
-  justify-content: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hero-img {
@@ -347,7 +434,9 @@ body {
 }
 
 .advantages-item-full {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
   width: 100%; /* вопрос, почему у меня фулл айтемы 395, а не 385 как надо, в чём проблема */
   grid-column: 1 / -1;
@@ -371,7 +460,9 @@ body {
 }
 
 .advantages-table {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 
   margin: 0;
@@ -431,7 +522,9 @@ body {
 }
 
 .service-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
 
   margin: 0;
@@ -503,7 +596,9 @@ body {
 }
 
 .subscribe-form {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
 
 
@@ -535,14 +630,29 @@ body {
 .page-footer {
   padding: 40px 70px 34px;
   display: flex;
-  justify-content: space-between;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .social-list {
   display: flex;
-  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 144px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 
   margin: 0;
   padding: 0;
@@ -647,6 +757,11 @@ body {
 
 .breadcrumbs {
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
   margin: 0;
   padding: 0;
 
@@ -699,12 +814,26 @@ body {
 
 .catalog-filter {
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
 }
 
 .control-list {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
   margin: 0;
 
@@ -735,7 +864,9 @@ body {
   border: none;
   width: 20px;
   height: 20px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   border-radius: 4px;
 }
@@ -759,7 +890,9 @@ body {
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .control-text {
@@ -793,7 +926,8 @@ body {
 }
 
 .catalog-filter-group-buttons {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   width: 190px;
   margin-left: auto;
 }
@@ -813,7 +947,9 @@ body {
 }
 
 .range-input-container {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2px 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: 2px;
 }
@@ -840,6 +976,11 @@ body {
 
 .sorting {
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
   /* flex-wrap: wrap; Нужен ли тут wrap? */
 
   padding: 0 70px;
@@ -856,13 +997,15 @@ body {
 .sorting-select {
   position: relative;
   width: 292px;
-  padding-left: 20px;
+  padding: 14px 45px 14px 20px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   font-family: "PT Sans", sans-serif;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 
   background-color: transparent;
   color: #333;
@@ -883,12 +1026,25 @@ body {
   outline: none;
 }
 
+.sorting-select:focus:not(:-moz-placeholder-shown) {
+  border-color: #3F5E72;
+}
+
+.sorting-select:focus:not(:-ms-input-placeholder) {
+  border-color: #3F5E72;
+}
+
 .sorting-select:focus:not(:placeholder-shown) {
   border-color: #3F5E72;
 }
 
 .sorting-view {
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
   width: 160px;
   margin-left: auto;
 }
@@ -936,7 +1092,9 @@ body {
 /* Разметка результата каталога */
 
 .catalog-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 18px 1fr 18px 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 
@@ -948,11 +1106,18 @@ body {
 }
 
 .catalog-card {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 140px 20px 140px;
   grid-template-columns: repeat(2, 140px);
-  align-items: start;
-  align-content: start;
-  column-gap: 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
   row-gap: 16px;
 
   padding: 20px;
@@ -983,7 +1148,8 @@ body {
 }
 
 .catalog-card-price {
-  justify-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .catalog-list button,
@@ -993,7 +1159,9 @@ body {
 }
 
 .catalog-raiting-stars {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .catalog-raiting-stars-item {
@@ -1002,6 +1170,11 @@ body {
   display: inline-block;
   width: 18px;
   height: 17px;
+}
+
+.catalog-raiting-stars > p {
+  background-color: #F2F2F2;
+  color: #333;
 }
 
 .catalog-button-favorite-current {
@@ -1021,7 +1194,10 @@ body {
   color: #ffffff30;
 }
 
-.catalog-button-favorite-current:disabled
+.catalog-button-favorite-current:disabled {
+  background-color: #E5E5E5;
+  color: #ffffff10;
+}
 
 .catalog-raiting-text {
   margin: 0;
@@ -1030,16 +1206,27 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 
-  border-radius: 4px;
-  color: #000;
-  background-color:#F2F2F2;
+  color: #333;
+  background-color: #F2F2F2;
+}
+
+.catalog-raiting-text:hover, .catalog-raiting-text:focus,
+.catalog-raiting-text:focus-visible, .catalog-raiting-text:disabled {
+  color: #333;
+  background-color: #F2F2F2;
 }
 
 /* pagination */
 
 .pagination {
   display: flex;
-  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
   margin-bottom: 60px;
@@ -1051,14 +1238,45 @@ body {
   text-align: center;
 }
 
+.pagination-link:not(.pagination-link-current, .pagination-link-more):hover {
+  background-color: #68A2CA;
+  -webkit-box-shadow: 0 0 0 1px #82B3D3;
+          box-shadow: 0 0 0 1px #82B3D3;
+  border-radius: 4px;
+}
+
+.pagination-link:focus {
+  outline: none;
+}
+
+.pagination-link:not(.pagination-link-current, .pagination-link-more):focus {
+  background-color: #68A2CA;
+  -webkit-box-shadow: 0 0 0 1px #82B3D3;
+          box-shadow: 0 0 0 1px #82B3D3;
+}
+
+.pagination-link:not(.pagination-link-current, .pagination-link-more):active {
+  background-color: #82B3D3;
+  color: #FFFFFF30;
+}
+
 .pagination-item:not(:last-child) {
   margin-right: 8px;
 }
 
 .pagination-link {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: -o-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 
   color: #fff;
   font-size: 20px;
@@ -1073,12 +1291,12 @@ body {
   text-decoration: none;
 }
 
-.pagination-item-current .pagination-link {
+.pagination-link-current {
   background-color: #F2F2F2;
   color: #000;
 }
 
-.pagination-item-more .pagination-link {
+.pagination-link-more {
   background-color: transparent;
   font-size: 22px;
   font-weight: 400;

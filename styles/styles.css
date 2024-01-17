@@ -36,6 +36,7 @@ html {
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+          word-wrap: break-word;
 }
 
 body {
@@ -984,7 +985,7 @@ body {
   /* flex-wrap: wrap; Нужен ли тут wrap? */
 
   padding: 0 70px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .outcome {

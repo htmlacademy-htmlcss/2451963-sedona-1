@@ -328,7 +328,7 @@ body {
   left: 16px;
   height: 2px;
   background-color: #756257;
-  content: ""; /* Как сделать, чтобы снизу 1 пиксель выходил из-за картинкивф */
+  content: "";
 }
 
 .navigation-user-link {
@@ -374,7 +374,6 @@ body {
   left: 0;
   margin: auto;
   fill: #000;
-  /* Как сделать круг поверх navigation-icon-favorite */
 }
 
 .navigation-button {
@@ -441,7 +440,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
-  width: 100%; /* вопрос, почему у меня фулл айтемы 395, а не 385 как надо, в чём проблема */
+  width: 100%;
   grid-column: 1 / -1;
 
   color: #fff;
@@ -777,7 +776,7 @@ body {
   font-size: 16px;
   line-height: 21px;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .breadcrumbs-link:hover {
@@ -813,6 +812,7 @@ body {
   font-weight: 700;
   line-height: 24px;
   text-transform: capitalize;
+  word-break: break-all;
 }
 
 .catalog-filter {
@@ -847,6 +847,11 @@ body {
   list-style: none;
   width: 150px;
   word-break: break-all;
+}
+
+.control-label {
+  display: flex;
+  align-items: center;
 }
 
 /* Вопрос: Как выровнять текст в кнопках бассейн, гостиница */
@@ -919,25 +924,29 @@ body {
 }
 
 .catalog-filter-group-checkbox {
+  grid-column: 1 / 2;
   width: 150px;
   margin-right: 70px;
 }
 
 .catalog-filter-group-radio {
+  grid-column: 2 / 3;
   width: 150px;
   margin-right: 140px;
 }
 
 .catalog-filter-group-range {
+  grid-column: 3 / 4;
   width: 288px;
   margin-left: auto;
 }
 
 .filter-submit {
-  margin-bottom: 32px; /* Вопрос, не ровно встают элементы из разных филдсетов, в фигме всё ровно */
+  margin-bottom: 32px;
 }
 
 .catalog-filter-group-buttons {
+  grid-column: 4 / 5;
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 190px;

@@ -36,6 +36,7 @@ html {
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+          word-wrap: break-word;
 }
 
 body {
@@ -327,7 +328,7 @@ body {
   left: 16px;
   height: 2px;
   background-color: #756257;
-  content: ""; /* Как сделать, чтобы снизу 1 пиксель выходил из-за картинки */
+  content: "";
 }
 
 .navigation-user-link {
@@ -373,10 +374,10 @@ body {
   left: 0;
   margin: auto;
   fill: #000;
-  /* Как сделать круг поверх navigation-icon-favorite */
 }
 
 .navigation-button {
+  grid-column: 4 / 5;
   margin-top: 14px;
   width: 160px;
   padding: 8px 20px;
@@ -419,6 +420,7 @@ body {
 .advantages-container {
   text-align: center;
   margin-bottom: 90px;
+  padding: 0 70px;
 }
 
 .advantages-title {
@@ -438,7 +440,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
-  width: 100%; /* вопрос, почему у меня фулл айтемы 395, а не 385 как надо, в чём проблема */
+  width: 100%;
   grid-column: 1 / -1;
 
   color: #fff;
@@ -774,7 +776,7 @@ body {
   font-size: 16px;
   line-height: 21px;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .breadcrumbs-link:hover {
@@ -810,15 +812,20 @@ body {
   font-weight: 700;
   line-height: 24px;
   text-transform: capitalize;
+  word-break: break-all;
 }
 
 .catalog-filter {
-  display: flex;
+  /* display: flex;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
-  display: -o-flex;
+  display: -o-flex; */
+  display: grid;
+  column-gap: 70px;
+
+  grid-template-columns: 150px 150px 1fr 190px;
 }
 
 .control-list {
@@ -838,9 +845,19 @@ body {
   margin: 0;
 
   list-style: none;
+  width: 150px;
+  word-break: break-all;
+}
+
+.control-label {
+  display: flex;
+  align-items: center;
 }
 
 /* Вопрос: Как выровнять текст в кнопках бассейн, гостиница */
+
+.control-filter-item {
+}
 
 .catalog-filter-item:hover {
   opacity: 0.6;
@@ -907,25 +924,29 @@ body {
 }
 
 .catalog-filter-group-checkbox {
+  grid-column: 1 / 2;
   width: 150px;
   margin-right: 70px;
 }
 
 .catalog-filter-group-radio {
+  grid-column: 2 / 3;
   width: 150px;
   margin-right: 140px;
 }
 
 .catalog-filter-group-range {
+  grid-column: 3 / 4;
   width: 288px;
-  margin-right: 70px;
+  margin-left: auto;
 }
 
 .filter-submit {
-  margin-bottom: 32px; /* Вопрос, не ровно встают элементы из разных филдсетов, в фигме всё ровно */
+  margin-bottom: 32px;
 }
 
 .catalog-filter-group-buttons {
+  grid-column: 4 / 5;
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 190px;
@@ -984,7 +1005,7 @@ body {
   /* flex-wrap: wrap; Нужен ли тут wrap? */
 
   padding: 0 70px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .outcome {

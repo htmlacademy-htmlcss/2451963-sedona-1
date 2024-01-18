@@ -872,12 +872,13 @@ body {
 }
 
 .catalog-filter-item:not(:last-child) {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .control-input {
   position: relative;
   margin: 0;
+  padding: 0;
   border: none;
   width: 20px;
   height: 20px;
@@ -914,7 +915,7 @@ body {
 
 .control-text {
   line-height: 23px;
-  padding-left: 12px;
+  padding-left: 16px;
 }
 
 .catalog-filter-group {
@@ -1002,15 +1003,15 @@ body {
   display: -ms-flexbox;
   display: -ms-flex;
   display: -o-flex;
+  align-items: center;
   /* flex-wrap: wrap; Нужен ли тут wrap? */
 
   padding: 0 70px;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .outcome {
   margin: 0;
-  margin-top: 7px;
   padding: 0;
   margin-right: 200px;
 }
@@ -1121,7 +1122,7 @@ body {
 
   margin: 0;
   padding: 0;
-  margin-bottom: 80px;
+  margin-bottom: 82px;
 
   list-style-type: none;
 }
@@ -1139,7 +1140,7 @@ body {
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
           column-gap: 20px;
-  row-gap: 16px;
+  row-gap: 15px;
 
   padding: 20px;
   border-radius: 4px;
@@ -1148,6 +1149,8 @@ body {
 
 .catalog-card-link {
   grid-column: 1 / -1;
+  text-decoration: none;
+  color: #000000;
 }
 
 .catalog-img {
@@ -1180,9 +1183,16 @@ body {
 }
 
 .catalog-raiting-stars {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 140px;
+  padding: 10px 0;
 }
 
 .catalog-raiting-stars-item {
@@ -1191,6 +1201,10 @@ body {
   display: inline-block;
   width: 18px;
   height: 17px;
+}
+
+.catalog-raiting-stars-item:not(:last-child) {
+  margin-right: 6px;
 }
 
 .catalog-raiting-stars > p {

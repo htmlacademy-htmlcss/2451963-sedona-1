@@ -378,6 +378,7 @@ body {
 }
 
 .navigation-button {
+  grid-column: 4 / 5;
   margin-top: 14px;
   width: 160px;
   padding: 8px 20px;
@@ -420,6 +421,7 @@ body {
 .advantages-container {
   text-align: center;
   margin-bottom: 90px;
+  padding: 0 70px;
 }
 
 .advantages-title {
@@ -814,12 +816,16 @@ body {
 }
 
 .catalog-filter {
-  display: flex;
+  /* display: flex;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
-  display: -o-flex;
+  display: -o-flex; */
+  display: grid;
+  column-gap: 70px;
+
+  grid-template-columns: 150px 150px 1fr 190px;
 }
 
 .control-list {
@@ -839,9 +845,14 @@ body {
   margin: 0;
 
   list-style: none;
+  width: 150px;
+  word-break: break-all;
 }
 
 /* Вопрос: Как выровнять текст в кнопках бассейн, гостиница */
+
+.control-filter-item {
+}
 
 .catalog-filter-item:hover {
   opacity: 0.6;
@@ -919,7 +930,7 @@ body {
 
 .catalog-filter-group-range {
   width: 288px;
-  margin-right: 70px;
+  margin-left: auto;
 }
 
 .filter-submit {

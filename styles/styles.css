@@ -1473,6 +1473,10 @@ body {
   z-index: 3;
 }
 
+.modal-container-close {
+  display: none;
+}
+
 .modal {
   position: relative;
   margin: auto;

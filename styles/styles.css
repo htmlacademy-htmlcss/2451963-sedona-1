@@ -190,6 +190,7 @@ body {
   line-height: 24px;
   font-family: "PT Sans", sans-serif;
   color: #000;
+  border-radius: 4px;
 
   background-color: #f2f2f2;
   border: none;
@@ -1537,13 +1538,64 @@ body {
 .quest-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 23px 88px;
 }
 
 .field-group {
-  display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 17px;
   align-items: center;
+}
+
+.date .modal-label {
+  position: relative;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 12px 0;
+  text-transform: capitalize;
 }
 
 .date {
   grid-column: 1 / -1;
+}
+
+.date-wrapper {
+  display: block;
+  position: relative;
+}
+
+.quest-form-calendar {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: 50px;
+  color: #000000;
+  fill: currentcolor;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 3px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.modal-date-input {
+  width: 440px;
+  padding: 10px 50px 9px 20px;
 }

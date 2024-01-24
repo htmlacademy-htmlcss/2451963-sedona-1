@@ -43,6 +43,13 @@ body {
   background-color: #f2f2f2;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .wrapper {
   display: -moz-flex;
   display: -ms-flexbox;
@@ -216,6 +223,10 @@ body {
   }
 }
 
+.field:focus-visible:not(:-moz-placeholder-shown) {
+  outline: 3px solid #000000;
+}
+
 .field:focus-visible:not(:-moz-placeholder-shown),
 .field:focus-visible:not(:-ms-input-placeholder),
 .field:focus-visible:not(:placeholder-shown) {
@@ -223,6 +234,9 @@ body {
 }
 
 @supports not selector(:focus-visible) {
+  .field:focus:not(:-moz-placeholder-shown) {
+    outline: 3px solid #000000;
+  }
   .field:focus:not(:-moz-placeholder-shown),
   .field:focus:not(:-ms-input-placeholder),
   .field:focus:not(:placeholder-shown) {
@@ -865,7 +879,8 @@ body {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -885,13 +900,11 @@ body {
 }
 
 .breadcrumbs-link:focus-visible {
-  outline: none;
   color: #ffffff;
 }
 
 @supports not selector(:focus-visible) {
   .breadcrumbs-link:focus {
-    outline: none;
     color: #ffffff;
   }
 }

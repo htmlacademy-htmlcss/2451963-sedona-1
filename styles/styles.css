@@ -41,6 +41,8 @@ html {
 
 body {
   margin: 0;
+  padding: 0 40px;
+  min-height: 1280px;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -65,7 +67,7 @@ body {
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   min-height: 100vh;
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
 
   background-color: #ffffff;
@@ -479,7 +481,7 @@ body {
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
   grid-column: 4 / 5;
-  margin-top: 14px;
+  margin: 14px 0 14px;
   width: 160px;
   padding: 8px 20px;
 }
@@ -508,7 +510,7 @@ body {
 .stairs-hero {
   position: absolute;
   bottom: 0;
-  width: 1200px;
+  width: 100%;
 }
 
 /* Card */
@@ -552,6 +554,9 @@ body {
 .advantages-image img {
   display: block;
   height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .advantages-item-full .card-title {

@@ -469,7 +469,6 @@ img {
   bottom: 0;
   left: 0;
   margin: auto;
-  fill: #000000;
 }
 
 .navigation-button {
@@ -495,6 +494,10 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-image: url("../images/jpg/hero-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 485px;
 }
 
 .hero-img {
@@ -693,7 +696,6 @@ img {
 
 .subscribe-home {
   color: #ffffff;
-
   background-color: #5c84ab;
   background-image: url("../images/jpg/subscribe-background-image.jpg");
   background-repeat: no-repeat;
@@ -739,6 +741,7 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .social-list {
@@ -797,6 +800,10 @@ img {
   fill: currentColor;
   text-transform: uppercase;
   text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 700px;
 }
 
 .page-footer-phone:hover {
@@ -851,7 +858,7 @@ img {
 
 .filter {
   padding: 35px 70px 70px;
-  margin-bottom: 50px;
+  margin-bottom: 47px;
   color: #ffffff;
   background-color: #82B3D3;
   background-image: url("../images/jpg/filter-background-image.jpg");
@@ -1074,9 +1081,9 @@ img {
 }
 
 .catalog-filter-group-buttons {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   width: 191px;
+  text-align: center;
+  padding-top: 55px;
 }
 
 .range-item {
@@ -1193,7 +1200,7 @@ img {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 70px;
-  margin-bottom: 37px;
+  margin-bottom: 38px;
 }
 
 .sorting-subtitle {
@@ -1398,16 +1405,28 @@ img {
 }
 
 .catalog-raiting-stars {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 140px;
-  padding: 10px 0;
+  display: block;
+  margin: 0;
+  height: 37px;
+  background-image: url("../images/svg/stars.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.catalog-raiting-stars-5 {
+  width: 115px;
+}
+
+.catalog-raiting-stars-4 {
+  width: 90px;
+}
+
+.catalog-raiting-stars-3 {
+  width: 70px;
+}
+
+.catalog-raiting-stars-2 {
+  width: 50px;
 }
 
 .catalog-raiting-stars-item {
@@ -1511,7 +1530,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;

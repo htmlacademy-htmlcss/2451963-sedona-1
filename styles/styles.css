@@ -494,6 +494,10 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-image: url("../images/jpg/hero-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 485px;
 }
 
 .hero-img {
@@ -692,7 +696,6 @@ img {
 
 .subscribe-home {
   color: #ffffff;
-
   background-color: #5c84ab;
   background-image: url("../images/jpg/subscribe-background-image.jpg");
   background-repeat: no-repeat;
@@ -1405,7 +1408,6 @@ img {
   display: block;
   margin: 0;
   height: 37px;
-
   background-image: url("../images/svg/stars.svg");
   background-repeat: no-repeat;
   background-position: left center;
@@ -1528,7 +1530,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;

@@ -44,10 +44,10 @@ body {
 }
 
 img {
-  height: auto;
   max-width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
+  height: auto;
 }
 
 .wrapper {

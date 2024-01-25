@@ -1402,16 +1402,29 @@ img {
 }
 
 .catalog-raiting-stars {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 140px;
-  padding: 10px 0;
+  display: block;
+  margin: 0;
+  height: 37px;
+
+  background-image: url("../images/svg/stars.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.catalog-raiting-stars-5 {
+  width: 115px;
+}
+
+.catalog-raiting-stars-4 {
+  width: 90px;
+}
+
+.catalog-raiting-stars-3 {
+  width: 70px;
+}
+
+.catalog-raiting-stars-2 {
+  width: 50px;
 }
 
 .catalog-raiting-stars-item {

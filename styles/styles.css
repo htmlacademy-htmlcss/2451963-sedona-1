@@ -487,6 +487,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #5c84ab;
   background-image: url("../images/jpg/hero-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -734,7 +735,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .social-list {
@@ -746,20 +751,28 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 144px;
+  max-width: 141px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
   padding: 0;
+  padding-top: 5px;
   list-style: none;
 }
 
 .social-link {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 47px;
   height: 40px;
-  padding: 12px;
   fill: currentColor;
   color: #83B3D3;
 }
@@ -784,8 +797,16 @@ body {
   color: rgba(104, 162, 202, 0.3);
 }
 
+.phone-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 700px;
+}
+
 .page-footer-phone {
-  margin-top: 5px;
   display: block;
   font-size: 40px;
   line-height: 40px;
@@ -797,6 +818,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   max-width: 700px;
+  padding: 5px;
 }
 
 .page-footer-phone:hover {
@@ -819,10 +841,19 @@ body {
   color: rgba(117, 97, 87, 0.3);
 }
 
+.copyright-wrapper {
+  padding-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 115px;
+}
+
 .page-footer-copyright {
   color: #000000;
   fill: currentColor;
-  margin-top: 8px;
 }
 
 .page-footer-copyright:hover {
